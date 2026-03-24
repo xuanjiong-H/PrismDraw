@@ -8,7 +8,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>big-market-api</module>
         <module>big-market-app</module>
         <module>big-market-domain</module>
         <module>big-market-trigger</module>
@@ -118,9 +117,9 @@
 
             <!-- 工程模块 -->
             <dependency>
-                <groupId>cn.bugstack</groupId>
-                <artifactId>big-market-api</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>3.23.4</version>
             </dependency>
             <dependency>
                 <groupId>cn.bugstack</groupId>

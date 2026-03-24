@@ -30,10 +30,6 @@
         <!-- 系统模块 -->
         <dependency>
             <groupId>cn.bugstack</groupId>
-            <artifactId>big-market-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>cn.bugstack</groupId>
             <artifactId>big-market-types</artifactId>
         </dependency>
         <dependency>
