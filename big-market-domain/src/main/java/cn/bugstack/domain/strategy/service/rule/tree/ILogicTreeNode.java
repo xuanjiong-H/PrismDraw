@@ -10,6 +10,6 @@ import cn.bugstack.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
  */
 public interface ILogicTreeNode {
 
-    DefaultTreeFactory.TreeActionEntity logic(String userId, Long strategyId, Integer awardId);
+    DefaultTreeFactory.TreeActionEntity logic(String userId, Long strategyId, Integer awardId, String ruleValue);
 
 }
