@@ -24,9 +24,10 @@
     </select>
 
     <select id="queryStrategyAwardListByStrategyId" parameterType="java.lang.Long" resultMap="dataMap">
-        select strategy_id, award_id, award_count, award_count_surplus, award_rate
+        select strategy_id, award_id, award_title, award_subtitle, award_count, award_count_surplus, award_rate, sort
         from strategy_award
-        where strategy_id = #{strategy_id}
+        where strategy_id = #{strategyId}
+        order by sort asc
     </select>
 
     <select id="queryStrategyAwardRuleModels" parameterType="cn.bugstack.infrastructure.persistent.po.StrategyAward" resultType="java.lang.String">
@@ -39,5 +40,11 @@
         set award_count_surplus = award_count_surplus - 1
         where strategy_id = #{strategyId} and award_id = #{awardId} and award_count_surplus > 0
     </update>
+
+    <select id="queryStrategyAward" parameterType="cn.bugstack.infrastructure.persistent.po.StrategyAward" resultMap="dataMap">
+        select strategy_id, award_id, award_title, award_subtitle, award_count, award_count_surplus, award_rate, rule_models, sort
+        from strategy_award
+        where strategy_id = #{strategyId} and award_id = #{awardId}
+    </select>
 
 </mapper>
