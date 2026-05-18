@@ -8,7 +8,7 @@ import cn.bugstack.domain.strategy.service.rule.chain.factory.DefaultChainFactor
  * @createTime: 2026-03-28 00:12
  * @version: 1.0
  */
-public interface ILogicChain extends ILogicChainArmory{
+public interface ILogicChain extends ILogicChainArmory, Cloneable {
 
     /**
      * 责任链接口
