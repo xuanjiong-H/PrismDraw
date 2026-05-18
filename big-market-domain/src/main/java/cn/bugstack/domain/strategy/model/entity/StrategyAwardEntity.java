@@ -8,10 +8,9 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 
 /**
- * @author: L
- * @description:策略奖品实体
- * @createTime: 2026-03-24 22:06
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 策略奖品实体
+ * @create 2023-12-23 10:48
  */
 @Data
 @Builder

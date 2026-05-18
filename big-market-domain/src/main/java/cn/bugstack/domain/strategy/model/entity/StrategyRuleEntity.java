@@ -12,10 +12,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author: L
- * @description:
- * @createTime: 2026-03-25 23:24
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 策略规则实体
+ * @create 2023-12-31 15:32
  */
 @Data
 @Builder

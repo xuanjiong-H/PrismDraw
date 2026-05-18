@@ -1,4 +1,4 @@
-package cn.bugstack.domain.strategy.model.entity;
+package cn.bugstack.domain.activity.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,18 +7,18 @@ import lombok.NoArgsConstructor;
 
 /**
  * @author Fuzhengwei bugstack.cn @小傅哥
- * @description 抽奖因子实体
- * @create 2024-01-06 09:20
+ * @description 活动购物车实体对象
+ * @create 2024-03-16 08:53
  */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RaffleFactorEntity {
+public class ActivityShopCartEntity {
 
     /** 用户ID */
     private String userId;
-    /** 策略ID */
-    private Long strategyId;
+    /** 商品SKU - activity + activity count */
+    private Long sku;
 
 }
