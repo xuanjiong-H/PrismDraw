@@ -29,6 +29,7 @@ public abstract class AbstractRaffleStrategy implements IRaffleStrategy {
     // 抽奖的决策树 -> 负责抽奖中到抽奖后的规则过滤，如抽奖到A奖品ID，之后要做次数的判断和库存的扣减等。
     protected final DefaultTreeFactory defaultTreeFactory;
 
+    // 为什么 Spring 推荐使用构造注入；https://docs.spring.io/spring-framework/reference/core/beans/dependencies/factory-collaborators.html
     public AbstractRaffleStrategy(IStrategyRepository repository, IStrategyDispatch strategyDispatch, DefaultChainFactory defaultChainFactory, DefaultTreeFactory defaultTreeFactory) {
         this.repository = repository;
         this.strategyDispatch = strategyDispatch;
