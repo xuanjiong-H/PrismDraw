@@ -225,7 +225,7 @@ public class StrategyRepository implements IStrategyRepository {
         long surplus = redisService.decr(cacheKey);
         if (surplus < 0) {
             // 库存小于0，恢复为0个
-            redisService.setValue(cacheKey, 0);
+            redisService.setAtomicLong(cacheKey, 0);
             return false;
         }
         // 1. 按照cacheKey decr 后的值，如 99、98、97 和 key 组成为库存锁的key进行使用。
@@ -247,7 +247,7 @@ public class StrategyRepository implements IStrategyRepository {
     }
 
     @Override
-    public StrategyAwardStockKeyVO takeQueueValue() {
+    public StrategyAwardStockKeyVO takeQueueValue() throws InterruptedException {
         String cacheKey = Constants.RedisKey.STRATEGY_AWARD_COUNT_QUERY_KEY;
         RBlockingQueue<StrategyAwardStockKeyVO> destinationQueue = redisService.getBlockingQueue(cacheKey);
         return destinationQueue.poll();

@@ -27,8 +27,9 @@ public class AwardDaoTest {
     private IAwardDao awardDao;
 
     @Test
-    public void test_queryAwardList(){
+    public void test_queryAwardList() {
         List<Award> awards = awardDao.queryAwardList();
         log.info("测试结果：{}", JSON.toJSONString(awards));
     }
+
 }

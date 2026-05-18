@@ -101,13 +101,24 @@
                 <artifactId>commons-codec</artifactId>
                 <version>1.15</version>
             </dependency>
-
-            <!-- 工程模块 -->
             <dependency>
                 <groupId>org.redisson</groupId>
                 <artifactId>redisson-spring-boot-starter</artifactId>
-                <version>3.23.4</version>
+                <version>3.26.0</version>
             </dependency>
+            <dependency>
+                <groupId>org.jeasy</groupId>
+                <artifactId>easy-random-core</artifactId>
+                <version>4.3.0</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/cn.bugstack.middleware/db-router-spring-boot-starter -->
+            <dependency>
+                <groupId>cn.bugstack.middleware</groupId>
+                <artifactId>db-router-spring-boot-starter</artifactId>
+                <version>1.0.4</version>
+            </dependency>
+
+            <!-- 工程模块 -->
             <dependency>
                 <groupId>cn.bugstack</groupId>
                 <artifactId>big-market-domain</artifactId>
