@@ -6,10 +6,9 @@ import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 
 /**
- * @author: L
- * @description:奖品表DAO
- * @createTime: 2026-03-23 21:44
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 奖品表DAO
+ * @create 2023-12-16 13:23
  */
 @Mapper
 public interface IAwardDao {

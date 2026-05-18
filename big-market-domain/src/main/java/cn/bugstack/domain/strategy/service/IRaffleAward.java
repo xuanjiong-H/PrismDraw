@@ -5,10 +5,9 @@ import cn.bugstack.domain.strategy.model.entity.StrategyAwardEntity;
 import java.util.List;
 
 /**
- * @author: L
- * @description:
- * @createTime: 2026-04-01 23:59
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 策略奖品接口
+ * @create 2024-02-14 16:44
  */
 public interface IRaffleAward {
 

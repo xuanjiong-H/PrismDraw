@@ -14,10 +14,9 @@ import javax.annotation.Resource;
 import java.util.*;
 
 /**
- * @author: L
- * @description:权重
- * @createTime: 2026-03-28 00:26
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 权重抽奖责任链
+ * @create 2024-01-20 10:38
  */
 @Slf4j
 @Component("rule_weight")

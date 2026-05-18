@@ -16,10 +16,9 @@ import java.security.SecureRandom;
 import java.util.*;
 
 /**
- * @author: L
- * @description: 策略装配库，负责初始化策略计算
- * @createTime: 2026-03-24 21:56
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 策略装配库(兵工厂)，负责初始化策略计算
+ * @create 2023-12-23 10:02
  */
 @Slf4j
 @Service

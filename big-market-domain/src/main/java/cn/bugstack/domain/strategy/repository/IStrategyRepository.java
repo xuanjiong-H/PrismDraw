@@ -11,10 +11,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author: L
- * @description: 策略存储接口
- * @createTime: 2026-03-24 21:58
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 策略服务仓储接口
+ * @create 2023-12-23 09:33
  */
 public interface IStrategyRepository {
 

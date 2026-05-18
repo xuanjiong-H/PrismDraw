@@ -36,5 +36,5 @@ build/
 
 ### Mac OS ###
 .DS_Store
-/.idea/
 /data/
+/.idea/

@@ -3,10 +3,9 @@ package cn.bugstack.domain.strategy.service.rule.chain;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author: L
- * @description:
- * @createTime: 2026-03-28 00:21
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 抽奖策略责任链，判断走那种抽奖策略。如；默认抽象、权重抽奖、黑名单抽奖
+ * @create 2024-01-20 09:37
  */
 @Slf4j
 public abstract class AbstractLogicChain implements ILogicChain{

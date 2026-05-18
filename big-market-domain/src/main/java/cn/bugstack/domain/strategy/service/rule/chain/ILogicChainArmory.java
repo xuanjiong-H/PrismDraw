@@ -1,10 +1,9 @@
 package cn.bugstack.domain.strategy.service.rule.chain;
 
 /**
- * @author: L
- * @description:
- * @createTime: 2026-03-28 01:22
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 责任链装配
+ * @create 2024-01-20 11:53
  */
 public interface ILogicChainArmory {
 

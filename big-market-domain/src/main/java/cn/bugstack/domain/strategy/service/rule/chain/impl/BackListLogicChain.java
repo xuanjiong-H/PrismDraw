@@ -12,10 +12,9 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 
 /**
- * @author: L
- * @description:黑名单方法
- * @createTime: 2026-03-28 00:24
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 黑名单责任链
+ * @create 2024-01-20 10:23
  */
 @Slf4j
 @Component("rule_blacklist")

@@ -12,10 +12,9 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 
 /**
- * @author: L
- * @description:库存节点
- * @createTime: 2026-03-28 21:29
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 库存扣减节点
+ * @create 2024-01-27 11:25
  */
 @Slf4j
 @Component("rule_stock")

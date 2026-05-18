@@ -20,10 +20,9 @@ import org.springframework.context.annotation.Configuration;
 import java.io.IOException;
 
 /**
- * @author: L
- * @description:
- * @createTime: 2026-03-24 21:23
- * @version: 1.0
+ * Redis 客户端，使用 Redisson <a href="https://github.com/redisson/redisson">Redisson</a>
+ *
+ * @author Fuzhengwei bugstack.cn @小傅哥
  */
 @Configuration
 @EnableConfigurationProperties(RedisClientConfigProperties.class)

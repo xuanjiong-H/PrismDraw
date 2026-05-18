@@ -4,10 +4,9 @@ import cn.bugstack.infrastructure.persistent.po.RuleTree;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * @author: L
- * @description:
- * @createTime: 2026-03-29 01:40
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 规则树表DAO
+ * @create 2024-02-03 08:42
  */
 @Mapper
 public interface IRuleTreeDao {

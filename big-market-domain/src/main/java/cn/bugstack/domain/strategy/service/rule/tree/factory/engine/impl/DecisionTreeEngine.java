@@ -10,10 +10,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author: L
- * @description:决策树引擎
- * @createTime: 2026-03-28 21:44
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 决策树引擎
+ * @create 2024-01-27 11:34
  */
 @Slf4j
 public class DecisionTreeEngine implements IDecisionTreeEngine {

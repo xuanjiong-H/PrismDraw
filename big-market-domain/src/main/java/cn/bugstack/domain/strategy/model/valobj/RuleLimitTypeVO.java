@@ -4,11 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
-*@author: L
-*@description: 
-*@createTime: 2026-03-28 21:15
-*@version: 1.0
-*/
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 规则限定枚举值
+ * @create 2024-01-27 12:27
+ */
 @Getter
 @AllArgsConstructor
 public enum RuleLimitTypeVO {

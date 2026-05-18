@@ -3,10 +3,9 @@ package cn.bugstack.trigger.api.dto;
 import lombok.Data;
 
 /**
- * @author: L
- * @description: 抽奖奖品列表请求DTO
- * @createTime: 2026-04-01 23:38
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 抽奖奖品列表，请求对象
+ * @create 2024-02-14 09:46
  */
 @Data
 public class RaffleAwardListRequestDTO {

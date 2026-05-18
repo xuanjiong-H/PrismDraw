@@ -7,12 +7,6 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
-/**
-*@author: L
-*@description: Response
-*@createTime: 2026-04-01 23:32
-*@version: 1.0
- */
 @Data
 @Builder
 @NoArgsConstructor

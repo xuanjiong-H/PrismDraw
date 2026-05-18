@@ -6,10 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @author: L
- * @description:
- * @createTime: 2026-03-28 21:15
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 规则树节点指向线对象。用于衔接 from->to 节点链路关系
+ * @create 2024-01-27 10:49
  */
 @Data
 @Builder

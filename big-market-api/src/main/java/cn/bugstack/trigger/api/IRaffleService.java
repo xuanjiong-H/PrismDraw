@@ -9,11 +9,10 @@ import cn.bugstack.types.model.Response;
 import java.util.List;
 
 /**
-*@author: L
-*@description: 
-*@createTime: 2026-04-01 23:31
-*@version: 1.0
-*/
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 抽奖服务接口
+ * @create 2024-02-14 09:33
+ */
 public interface IRaffleService {
 
     /**

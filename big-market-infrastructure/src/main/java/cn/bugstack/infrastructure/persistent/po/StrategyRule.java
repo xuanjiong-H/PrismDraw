@@ -5,10 +5,9 @@ import lombok.Data;
 import java.util.Date;
 
 /**
- * @author: L
- * @description: 策略规则
- * @createTime: 2026-03-23 21:44
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 策略规则
+ * @create 2023-12-16 13:17
  */
 @Data
 public class StrategyRule {

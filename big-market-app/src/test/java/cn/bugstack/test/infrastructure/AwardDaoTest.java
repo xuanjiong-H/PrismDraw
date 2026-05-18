@@ -13,10 +13,9 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * @author: L
- * @description:奖品持久化单元测试
- * @createTime: 2026-03-23 22:44
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 奖品持久化单元测试
+ * @create 2023-12-16 13:36
  */
 @Slf4j
 @RunWith(SpringRunner.class)

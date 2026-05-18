@@ -5,10 +5,9 @@ import lombok.Data;
 import java.util.Date;
 
 /**
- * @author: L
- * @description: 奖品表
- * @createTime: 2026-03-23 21:44
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 奖品表
+ * @create 2023-12-16 13:21
  */
 @Data
 public class Award {

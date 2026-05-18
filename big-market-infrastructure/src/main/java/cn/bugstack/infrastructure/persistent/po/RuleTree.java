@@ -5,10 +5,9 @@ import lombok.Data;
 import java.util.Date;
 
 /**
- * @author: L
- * @description:
- * @createTime: 2026-03-29 01:36
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 规则树
+ * @create 2024-02-03 10:29
  */
 @Data
 public class RuleTree {

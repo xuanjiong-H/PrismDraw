@@ -3,10 +3,9 @@ package cn.bugstack.domain.strategy.service.rule.chain;
 import cn.bugstack.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
 
 /**
- * @author: L
- * @description:责任链过滤
- * @createTime: 2026-03-28 00:12
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 抽奖策略规则责任链接口
+ * @create 2024-01-20 09:40
  */
 public interface ILogicChain extends ILogicChainArmory, Cloneable {
 

@@ -8,10 +8,9 @@ import javax.annotation.Resource;
 import java.time.Duration;
 
 /**
- * @author: L
- * @description:
- * @createTime: 2026-03-24 21:07
- * @version: 1.0
+ * Redis 服务 - Redisson
+ *
+ * @author Fuzhengwei bugstack.cn @小傅哥
  */
 @Service("redissonService")
 public class RedissonService implements IRedisService {

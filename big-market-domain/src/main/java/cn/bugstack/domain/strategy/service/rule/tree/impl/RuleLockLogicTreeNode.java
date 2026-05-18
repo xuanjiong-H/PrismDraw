@@ -1,16 +1,18 @@
 package cn.bugstack.domain.strategy.service.rule.tree.impl;
 
 import cn.bugstack.domain.strategy.model.valobj.RuleLogicCheckTypeVO;
+import cn.bugstack.domain.strategy.repository.IStrategyRepository;
 import cn.bugstack.domain.strategy.service.rule.tree.ILogicTreeNode;
 import cn.bugstack.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
+
 /**
- * @author: L
- * @description:
- * @createTime: 2026-03-28 21:25
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 次数锁节点
+ * @create 2024-01-27 11:22
  */
 @Slf4j
 @Component("rule_lock")

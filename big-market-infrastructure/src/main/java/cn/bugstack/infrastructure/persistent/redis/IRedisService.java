@@ -3,10 +3,9 @@ package cn.bugstack.infrastructure.persistent.redis;
 import org.redisson.api.*;
 
 /**
- * @author: L
- * @description:
- * @createTime: 2026-03-24 21:07
- * @version: 1.0
+ * Redis 服务
+ *
+ * @author Fuzhengwei bugstack.cn @小傅哥
  */
 public interface IRedisService {
 

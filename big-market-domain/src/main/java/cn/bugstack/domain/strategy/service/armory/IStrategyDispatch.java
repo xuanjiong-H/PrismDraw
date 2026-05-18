@@ -1,10 +1,9 @@
 package cn.bugstack.domain.strategy.service.armory;
 
 /**
- * @author: L
- * @description:策略抽奖调度
- * @createTime: 2026-03-25 22:04
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 策略抽奖调度
+ * @create 2023-12-31 15:15
  */
 public interface IStrategyDispatch {
 

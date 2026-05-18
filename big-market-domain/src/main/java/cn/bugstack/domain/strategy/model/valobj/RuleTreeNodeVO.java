@@ -8,10 +8,9 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 /**
- * @author: L
- * @description:
- * @createTime: 2026-03-28 21:16
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 规则树节点对象
+ * @create 2024-01-27 10:48
  */
 @Data
 @Builder

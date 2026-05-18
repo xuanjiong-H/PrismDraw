@@ -8,10 +8,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 /**
- * @author: L
- * @description:兜底奖励节点
- * @createTime: 2026-03-28 21:28
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 兜底奖励节点
+ * @create 2024-01-27 11:23
  */
 @Slf4j
 @Component("rule_luck_award")

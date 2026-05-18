@@ -6,10 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @author: L
- * @description:
- * @createTime: 2026-04-01 23:40
- * @version: 1.0
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 抽奖奖品列表，应答对象
+ * @create 2024-02-14 09:43
  */
 @Data
 @Builder
