@@ -68,6 +68,7 @@ public abstract class AbstractRaffleActivityPartake implements IRaffleActivityPa
         // 4. 构建订单
         UserRaffleOrderEntity userRaffleOrder = this.buildUserRaffleOrder(userId, activityId, currentDate);
 
+
         // 5. 填充抽奖单实体对象
         createPartakeOrderAggregate.setUserRaffleOrderEntity(userRaffleOrder);
 

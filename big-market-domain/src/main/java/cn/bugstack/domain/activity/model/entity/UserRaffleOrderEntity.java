@@ -19,19 +19,21 @@ import java.util.Date;
 @NoArgsConstructor
 public class UserRaffleOrderEntity {
 
-    /** 活动ID */
+    /** 用户ID */
     private String userId;
-    /** 活动名称 */
+    /** 活动ID */
     private Long activityId;
-    /** 抽奖策略ID */
+    /** 活动名称 */
     private String activityName;
-    /** 订单ID */
+    /** 策略ID */
     private Long strategyId;
-    /** 下单时间 */
+    /** 订单ID */
     private String orderId;
-    /** 订单状态；create-创建、used-已使用、cancel-已作废 */
+    /** 下单时间 */
     private Date orderTime;
-    /** 创建时间 */
+    /** 活动状态；create-创建、used-已使用、cancel-已作废 */
     private UserRaffleOrderStateVO orderState;
+    /** 结束时间 */
+    private Date endDateTime;
 
 }

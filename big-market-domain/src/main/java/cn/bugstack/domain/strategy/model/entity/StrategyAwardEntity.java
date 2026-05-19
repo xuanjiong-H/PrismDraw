@@ -34,5 +34,7 @@ public class StrategyAwardEntity {
     private BigDecimal awardRate;
     /** 排序 */
     private Integer sort;
+    /** 规则模型，rule配置的模型同步到此表，便于使用 */
+    private String ruleModels;
 
 }

@@ -117,7 +117,7 @@ public class StrategyArmoryDispatch implements IStrategyArmory, IStrategyDispatc
      * 转换计算，只根据小数位来计算。如【0.01返回100】、【0.009返回1000】、【0.0018返回10000】
      */
     private double convert(double min) {
-        if(0 == min) return 1D;
+        if (0 == min) return 1D;
 
         double current = min;
         double max = 1;
@@ -163,9 +163,9 @@ public class StrategyArmoryDispatch implements IStrategyArmory, IStrategyDispatc
     }
 
     @Override
-    public Boolean subtractionAwardStock(Long strategyId, Integer awardId) {
+    public Boolean subtractionAwardStock(Long strategyId, Integer awardId, Date endDateTime) {
         String cacheKey = Constants.RedisKey.STRATEGY_AWARD_COUNT_KEY + strategyId + Constants.UNDERLINE + awardId;
-        return repository.subtractionAwardStock(cacheKey);
+        return repository.subtractionAwardStock(cacheKey, endDateTime);
     }
 
 }
