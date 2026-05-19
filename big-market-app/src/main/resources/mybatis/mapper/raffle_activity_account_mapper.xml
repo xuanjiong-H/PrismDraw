@@ -47,11 +47,20 @@
 
     <update id="updateActivityAccountSubtractionQuota" parameterType="cn.bugstack.infrastructure.persistent.po.RaffleActivityAccount">
         update raffle_activity_account
-        set total_count_surplus = total_count_surplus - 1,
-            day_count_surplus = day_count_surplus - 1,
-            month_count_surplus = month_count_surplus - 1,
-            update_time = now()
-        where user_id = #{userId} and activity_id = #{activityId} and total_count_surplus > 0 and day_count_surplus > 0 and month_count_surplus > 0
+        set total_count_surplus = total_count_surplus - 1, update_time = now()
+        where user_id = #{userId} and activity_id = #{activityId} and total_count_surplus > 0
+    </update>
+
+    <update id="updateActivityAccountMonthSubtractionQuota" parameterType="cn.bugstack.infrastructure.persistent.po.RaffleActivityAccount">
+        update raffle_activity_account
+        set month_count_surplus = month_count_surplus - 1, update_time = now()
+        where user_id = #{userId} and activity_id = #{activityId} and month_count_surplus > 0
+    </update>
+
+    <update id="updateActivityAccountDaySubtractionQuota" parameterType="cn.bugstack.infrastructure.persistent.po.RaffleActivityAccount">
+        update raffle_activity_account
+        set day_count_surplus = day_count_surplus - 1, update_time = now()
+        where user_id = #{userId} and activity_id = #{activityId} and day_count_surplus > 0
     </update>
 
     <update id="updateActivityAccountMonthSurplusImageQuota" parameterType="cn.bugstack.infrastructure.persistent.po.RaffleActivityAccount">

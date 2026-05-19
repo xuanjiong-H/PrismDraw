@@ -14,8 +14,12 @@ public class Task {
 
     /** 自增ID */
     private String id;
+    /** 活动ID */
+    private String userId;
     /** 消息主题 */
     private String topic;
+    /** 消息编号 */
+    private String messageId;
     /** 消息主体 */
     private String message;
     /** 任务状态；create-创建、completed-完成、fail-失败 */
