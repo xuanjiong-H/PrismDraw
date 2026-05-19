@@ -37,7 +37,7 @@ public class StrategyArmoryDispatch implements IStrategyArmory, IStrategyDispatc
         // 2 缓存奖品库存【用于decr扣减库存使用】
         for (StrategyAwardEntity strategyAward : strategyAwardEntities) {
             Integer awardId = strategyAward.getAwardId();
-            Integer awardCount = strategyAward.getAwardCount();
+            Integer awardCount = strategyAward.getAwardCountSurplus();
             cacheStrategyAwardCount(strategyId, awardId, awardCount);
         }
 

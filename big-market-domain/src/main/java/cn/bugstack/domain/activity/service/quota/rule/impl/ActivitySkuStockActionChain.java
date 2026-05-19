@@ -1,4 +1,4 @@
-package cn.bugstack.domain.activity.service.rule.impl;
+package cn.bugstack.domain.activity.service.quota.rule.impl;
 
 import cn.bugstack.domain.activity.model.entity.ActivityCountEntity;
 import cn.bugstack.domain.activity.model.entity.ActivityEntity;
@@ -6,7 +6,7 @@ import cn.bugstack.domain.activity.model.entity.ActivitySkuEntity;
 import cn.bugstack.domain.activity.model.valobj.ActivitySkuStockKeyVO;
 import cn.bugstack.domain.activity.repository.IActivityRepository;
 import cn.bugstack.domain.activity.service.armory.IActivityDispatch;
-import cn.bugstack.domain.activity.service.rule.AbstractActionChain;
+import cn.bugstack.domain.activity.service.quota.rule.AbstractActionChain;
 import cn.bugstack.types.enums.ResponseCode;
 import cn.bugstack.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
