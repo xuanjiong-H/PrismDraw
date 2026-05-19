@@ -42,6 +42,7 @@ public class RuleStockLogicTreeNode implements ILogicTreeNode {
                     .awardId(awardId)
                     .build());
 
+            // 注意；根据数据库表中配置走不同的节点。目前数据库配置 ALLOW 是走到下一个节点。
             return DefaultTreeFactory.TreeActionEntity.builder()
                     .ruleLogicCheckType(RuleLogicCheckTypeVO.TAKE_OVER)
                     .strategyAwardVO(DefaultTreeFactory.StrategyAwardVO.builder()
