@@ -30,4 +30,10 @@
         where user_id = #{userId} and activity_id = #{activityId} and order_state = 'create'
     </select>
 
+    <update id="updateUserRaffleOrderStateUsed" parameterType="cn.bugstack.infrastructure.persistent.po.UserRaffleOrder">
+        update user_raffle_order
+        set order_state = 'used', update_time = now()
+        where user_id = #{userId} and order_id = #{orderId} and order_state = 'create'
+    </update>
+
 </mapper>

@@ -1,7 +1,5 @@
 package cn.bugstack.domain.activity.service.armory;
 
-import cn.bugstack.domain.activity.model.valobj.ActivitySkuStockKeyVO;
-
 import java.util.Date;
 
 /**
