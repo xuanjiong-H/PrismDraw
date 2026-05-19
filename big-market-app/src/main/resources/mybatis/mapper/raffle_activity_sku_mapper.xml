@@ -19,4 +19,16 @@
         where sku = #{sku}
     </select>
 
+    <update id="updateActivitySkuStock" parameterType="java.lang.Long">
+        update raffle_activity_sku
+        set stock_count_surplus = stock_count_surplus - 1, update_time = now()
+        where sku = #{sku} and stock_count_surplus > 0
+    </update>
+
+    <update id="clearActivitySkuStock" parameterType="java.lang.Long">
+        update raffle_activity_sku
+        set stock_count_surplus = 0, update_time = now()
+        where sku = #{sku}
+    </update>
+
 </mapper>
