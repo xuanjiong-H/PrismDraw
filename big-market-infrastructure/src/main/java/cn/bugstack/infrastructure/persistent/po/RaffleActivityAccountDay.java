@@ -24,7 +24,7 @@ public class RaffleActivityAccountDay {
     /**
      * 自增ID
      */
-    private String id;
+    private Long id;
     /**
      * 用户ID
      */
