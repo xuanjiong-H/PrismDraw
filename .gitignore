@@ -38,3 +38,5 @@ build/
 .DS_Store
 /data/
 /.idea/
+/docs/dev-ops/log/
+/big-market-app/data/

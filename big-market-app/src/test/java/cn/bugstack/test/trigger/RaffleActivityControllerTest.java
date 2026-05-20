@@ -49,7 +49,7 @@ public class RaffleActivityControllerTest {
 
     @Test
     public void test_calendarSignRebate() {
-        Response<Boolean> response = raffleActivityService.calendarSignRebate("xiaofuge2");
+        Response<Boolean> response = raffleActivityService.calendarSignRebate("xiaofuge");
         log.info("测试结果：{}", JSON.toJSONString(response));
     }
 
@@ -63,7 +63,7 @@ public class RaffleActivityControllerTest {
     public void test_queryUserActivityAccount() {
         UserActivityAccountRequestDTO request = new UserActivityAccountRequestDTO();
         request.setActivityId(100301L);
-        request.setUserId("xiaofuge2");
+        request.setUserId("xiaofuge");
 
         // 查询数据
         Response<UserActivityAccountResponseDTO> response = raffleActivityService.queryUserActivityAccount(request);
