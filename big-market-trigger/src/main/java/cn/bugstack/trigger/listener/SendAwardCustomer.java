@@ -48,7 +48,7 @@ public class SendAwardCustomer {
             awardService.distributeAward(distributeAwardEntity);
         } catch (Exception e) {
             log.error("监听用户奖品发送消息，消费失败 topic: {} message: {}", topic, message);
-            throw e;
+//            throw e;
         }
     }
 

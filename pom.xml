@@ -124,6 +124,12 @@
                 <version>3.2.0</version>
             </dependency>
 
+<!--            <dependency>-->
+<!--                <groupId>cn.bugstack</groupId>-->
+<!--                <artifactId>business-behavior-monitor-sdk</artifactId>-->
+<!--                <version>1.0</version>-->
+<!--            </dependency>-->
+
             <!-- 工程模块 -->
             <dependency>
                 <groupId>cn.bugstack</groupId>
