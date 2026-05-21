@@ -33,7 +33,9 @@
     </update>
 
     <select id="queryActivitySkuListByActivityId" parameterType="java.lang.Long" resultMap="dataMap">
-        select sku, activity_count_id, stock_count, stock_count_surplus, product_amount from raffle_activity_sku where activity_id = #{activityId}
+        select sku, activity_count_id, stock_count, stock_count_surplus, product_amount
+        from raffle_activity_sku
+        where activity_id = #{activityId}
     </select>
 
 </mapper>

@@ -1,11 +1,11 @@
 package cn.bugstack.trigger.api;
 
-import cn.bugstack.trigger.api.dto.ActivityDrawRequestDTO;
-import cn.bugstack.trigger.api.dto.ActivityDrawResponseDTO;
-import cn.bugstack.trigger.api.dto.UserActivityAccountRequestDTO;
-import cn.bugstack.trigger.api.dto.UserActivityAccountResponseDTO;
+import cn.bugstack.trigger.api.dto.*;
 import cn.bugstack.types.model.Response;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * @author Fuzhengwei bugstack.cn @小傅哥
@@ -53,5 +53,29 @@ public interface IRaffleActivityService {
      * @return 返回结果「总额度、月额度、日额度」
      */
     Response<UserActivityAccountResponseDTO> queryUserActivityAccount(UserActivityAccountRequestDTO request);
+
+    /**
+     * 查询sku商品集合
+     *
+     * @param activityId 活动ID
+     * @return 商品集合
+     */
+    Response<List<SkuProductResponseDTO>> querySkuProductListByActivityId(Long activityId);
+
+    /**
+     * 查询用户积分值
+     *
+     * @param userId 用户ID
+     * @return 可用积分
+     */
+    Response<BigDecimal> queryUserCreditAccount(String userId);
+
+    /**
+     * 积分支付兑换商品
+     *
+     * @param request 请求对象「用户ID、商品ID」
+     * @return 兑换结果
+     */
+    Response<Boolean> creditPayExchangeSku(SkuProductShopCartRequestDTO request);
 
 }
