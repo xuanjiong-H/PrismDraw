@@ -27,6 +27,7 @@ public class AppException extends RuntimeException {
     public AppException(String code, String message) {
         this.code = code;
         this.info = message;
+        super.initCause(new Throwable(message));
     }
 
     public AppException(String code, String message, Throwable cause) {

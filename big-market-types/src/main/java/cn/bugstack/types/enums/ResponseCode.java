@@ -18,11 +18,12 @@ public enum ResponseCode {
     ACTIVITY_STATE_ERROR("ERR_BIZ_003", "活动未开启（非open状态）"),
     ACTIVITY_DATE_ERROR("ERR_BIZ_004", "非活动日期范围"),
     ACTIVITY_SKU_STOCK_ERROR("ERR_BIZ_005", "活动库存不足"),
-    ACCOUNT_QUOTA_ERROR("ERR_BIZ_006","账户总额度不足"),
-    ACCOUNT_MONTH_QUOTA_ERROR("ERR_BIZ_007","账户月额度不足"),
-    ACCOUNT_DAY_QUOTA_ERROR("ERR_BIZ_008","账户日额度不足"),
+    ACCOUNT_QUOTA_ERROR("ERR_BIZ_006", "账户总额度不足"),
+    ACCOUNT_MONTH_QUOTA_ERROR("ERR_BIZ_007", "账户月额度不足"),
+    ACCOUNT_DAY_QUOTA_ERROR("ERR_BIZ_008", "账户日额度不足"),
     ACTIVITY_ORDER_ERROR("ERR_BIZ_009", "用户抽奖单已使用过，不可重复抽奖"),
     AWARD_CONFIG_ERROR("ERR_CONFIG_001", "award_config 配置不是一个范围值，如 1,100"),
+    USER_CREDIT_ACCOUNT_NO_AVAILABLE_AMOUNT("ERR_CREDIT_001", "用户积分账户额度不足"),
     ;
 
     private String code;

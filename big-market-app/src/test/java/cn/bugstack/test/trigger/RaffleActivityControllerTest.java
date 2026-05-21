@@ -109,7 +109,7 @@ public class RaffleActivityControllerTest {
     public void test_creditPayExchangeSku() throws InterruptedException {
         SkuProductShopCartRequestDTO request = new SkuProductShopCartRequestDTO();
         request.setUserId("xiaofuge");
-        request.setSku(9011L);
+        request.setSku(9014L);
         Response<Boolean> response = raffleActivityService.creditPayExchangeSku(request);
         log.info("请求参数：{}", JSON.toJSONString(request));
         log.info("测试结果：{}", JSON.toJSONString(response));

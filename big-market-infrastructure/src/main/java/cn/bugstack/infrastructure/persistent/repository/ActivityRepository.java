@@ -25,6 +25,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -55,6 +56,8 @@ public class ActivityRepository implements IActivityRepository {
     private IRaffleActivityAccountMonthDao raffleActivityAccountMonthDao;
     @Resource
     private IRaffleActivityAccountDayDao raffleActivityAccountDayDao;
+    @Resource
+    private IUserCreditAccountDao userCreditAccountDao;
     @Resource
     private TransactionTemplate transactionTemplate;
     @Resource
@@ -620,6 +623,11 @@ public class ActivityRepository implements IActivityRepository {
             raffleActivityOrderReq.setOutBusinessNo(deliveryOrderEntity.getOutBusinessNo());
             RaffleActivityOrder raffleActivityOrderRes = raffleActivityOrderDao.queryRaffleActivityOrder(raffleActivityOrderReq);
 
+            if (null == raffleActivityOrderRes) {
+                if (lock.isLocked()) lock.unlock();
+                return;
+            }
+
             // 账户对象 - 总
             RaffleActivityAccount raffleActivityAccount = new RaffleActivityAccount();
             raffleActivityAccount.setUserId(raffleActivityOrderRes.getUserId());
@@ -678,7 +686,9 @@ public class ActivityRepository implements IActivityRepository {
             });
         } finally {
             dbRouter.clear();
-            lock.unlock();
+            if (lock.isLocked()) {
+                lock.unlock();
+            }
         }
     }
 
@@ -721,6 +731,20 @@ public class ActivityRepository implements IActivityRepository {
 
         }
         return skuProductEntities;
+    }
+
+    @Override
+    public BigDecimal queryUserCreditAccountAmount(String userId) {
+        try {
+            dbRouter.doRouter(userId);
+            UserCreditAccount userCreditAccountReq = new UserCreditAccount();
+            userCreditAccountReq.setUserId(userId);
+            UserCreditAccount userCreditAccount = userCreditAccountDao.queryUserCreditAccount(userCreditAccountReq);
+            if (null == userCreditAccount) return BigDecimal.ZERO;
+            return userCreditAccount.getAvailableAmount();
+        } finally {
+            dbRouter.clear();
+        }
     }
 
 }
