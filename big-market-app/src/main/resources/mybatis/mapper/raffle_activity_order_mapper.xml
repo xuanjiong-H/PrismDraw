@@ -14,6 +14,7 @@
         <result column="total_count" property="totalCount"/>
         <result column="day_count" property="dayCount"/>
         <result column="month_count" property="monthCount"/>
+        <result column="pay_amount" property="payAmount"/>
         <result column="state" property="state"/>
         <result column="out_business_no" property="outBusinessNo"/>
         <result column="create_time" property="createTime"/>
@@ -22,17 +23,28 @@
 
     <insert id="insert" parameterType="cn.bugstack.infrastructure.persistent.po.RaffleActivityOrder">
         insert into raffle_activity_order
-        (user_id, sku, activity_id, activity_name, strategy_id, order_id, order_time, state, out_business_no, total_count, day_count, month_count,
+        (user_id, sku, activity_id, activity_name, strategy_id, order_id, order_time, pay_amount, state, out_business_no, total_count, day_count, month_count,
         create_time, update_time)
         values
-        (#{userId}, #{sku}, #{activityId}, #{activityName}, #{strategyId}, #{orderId}, #{orderTime}, #{state}, #{outBusinessNo}, #{totalCount}, #{dayCount}, #{monthCount},
+        (#{userId}, #{sku}, #{activityId}, #{activityName}, #{strategyId}, #{orderId}, #{orderTime}, #{payAmount}, #{state}, #{outBusinessNo}, #{totalCount}, #{dayCount}, #{monthCount},
         now(), now())
     </insert>
 
     <select id="queryRaffleActivityOrderByUserId" parameterType="java.lang.String" resultMap="dataMap">
-        select user_id, sku, activity_id, activity_name, strategy_id, order_id, order_time, state
+        select user_id, sku, activity_id, activity_name, strategy_id, order_id, order_time, pay_amount, state
         from raffle_activity_order
         where user_id = #{userId}
     </select>
+
+    <select id="queryRaffleActivityOrder" parameterType="cn.bugstack.infrastructure.persistent.po.RaffleActivityOrder" resultMap="dataMap">
+        select user_id, sku, activity_id, activity_name, strategy_id, order_id, order_time, total_count, day_count, month_count, pay_amount, state
+        from raffle_activity_order
+        where user_id = #{userId} and out_business_no = #{outBusinessNo}
+    </select>
+
+    <update id="updateOrderCompleted" parameterType="cn.bugstack.infrastructure.persistent.po.RaffleActivityOrder">
+        update raffle_activity_order set state = 'completed', update_time = now()
+        where user_id = #{userId} and out_business_no = #{outBusinessNo} and state = 'wait_pay'
+    </update>
 
 </mapper>
