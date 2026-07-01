@@ -613,7 +613,7 @@ public class ActivityRepository implements IActivityRepository {
 
     @Override
     public void updateOrder(DeliveryOrderEntity deliveryOrderEntity) {
-        RLock lock = redisService.getLock(Constants.RedisKey.ACTIVITY_ACCOUNT_UPDATE_LOCK + deliveryOrderEntity.getUserId());
+        RLock lock = redisService.getLock(Constants.RedisKey.ACTIVITY_ACCOUNT_UPDATE_LOCK + deliveryOrderEntity.getUserId() + Constants.UNDERLINE + deliveryOrderEntity.getOutBusinessNo());
         try {
             lock.lock(3, TimeUnit.SECONDS);
 

@@ -28,6 +28,8 @@
         select user_id, activity_id, activity_name, strategy_id, order_id, order_time, order_state
         from user_raffle_order
         where user_id = #{userId} and activity_id = #{activityId} and order_state = 'create'
+        order by create_time desc
+        limit 1
     </select>
 
     <update id="updateUserRaffleOrderStateUsed" parameterType="cn.bugstack.infrastructure.persistent.po.UserRaffleOrder">

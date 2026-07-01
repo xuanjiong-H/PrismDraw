@@ -2,6 +2,7 @@ package cn.bugstack.trigger.api.dto;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
@@ -10,7 +11,7 @@ import java.math.BigDecimal;
  * @create 2024-06-15 09:12
  */
 @Data
-public class SkuProductResponseDTO {
+public class SkuProductResponseDTO implements Serializable {
 
     /**
      * 商品sku

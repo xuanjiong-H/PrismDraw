@@ -116,16 +116,52 @@ public class StrategyArmoryDispatch implements IStrategyArmory, IStrategyDispatc
     /**
      * 转换计算，只根据小数位来计算。如【0.01返回100】、【0.009返回1000】、【0.0018返回10000】
      */
-    private double convert(double min) {
+    private double convertOld1(double min) {
         if (0 == min) return 1D;
 
         double current = min;
         double max = 1;
-        while (current < 1) {
+        while (current % 1 != 0) {
             current = current * 10;
             max = max * 10;
         }
         return max;
+    }
+
+    private double convertOld2(double min) {
+        if (min == 0) return 1D;
+
+        String minStr = Double.toString(min);
+        int decimalPlaces = 0;
+
+        int decimalPointIndex = minStr.indexOf('.');
+        if (decimalPointIndex != -1) {
+            decimalPlaces = minStr.length() - decimalPointIndex - 1;
+        }
+
+        return Math.pow(10, decimalPlaces);
+    }
+
+     private double convert(double min) {
+        if (0 == min) return 1D;
+
+        String minStr = String.valueOf(min);
+
+        // 小数点前
+        String beginVale = minStr.substring(0, minStr.indexOf("."));
+        int beginLength = 0;
+        if (Double.parseDouble(beginVale) > 0) {
+            beginLength = minStr.substring(0, minStr.indexOf(".")).length();
+        }
+
+        // 小数点后
+        String endValue = minStr.substring(minStr.indexOf(".") + 1);
+        int endLength = 0;
+        if (Double.parseDouble(endValue) > 0) {
+            endLength = minStr.substring(minStr.indexOf(".") + 1).length();
+        }
+
+        return Math.pow(10, beginLength + endLength);
     }
 
     /**

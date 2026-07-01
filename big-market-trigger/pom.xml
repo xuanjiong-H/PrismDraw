@@ -34,6 +34,14 @@
             <groupId>cn.bugstack.middleware</groupId>
             <artifactId>db-router-spring-boot-starter</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+        </dependency>
 
         <!-- 系统模块 -->
         <dependency>

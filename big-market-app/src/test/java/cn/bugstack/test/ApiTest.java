@@ -23,14 +23,21 @@ public class ApiTest {
         log.info(JSON.toJSONString(requestDTO));
     }
 
-    private double convert(double min){
+    public static void main(String[] args) {
+        double convert = convert(0.0018);
+        System.out.println(convert);
+    }
+
+    private static double convert(double min){
         double current = min;
         double max = 1;
-        while (current < 1){
+        while (current % 1 != 0){
             current = current * 10;
             max = max * 10;
         }
         return max;
     }
+
+
 
 }

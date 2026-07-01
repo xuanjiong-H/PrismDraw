@@ -29,9 +29,8 @@ public class ActivityArmory implements IActivityArmory, IActivityDispatch {
     public boolean assembleActivitySkuByActivityId(Long activityId) {
         List<ActivitySkuEntity> activitySkuEntities = activityRepository.queryActivitySkuListByActivityId(activityId);
         for (ActivitySkuEntity activitySkuEntity : activitySkuEntities) {
-            // 预热：这个 SKU 还剩多少库存。用户下单时用 DECR 扣减这个值，扣到 0 就没库存了。SKU库存 → key: activity_sku_stock_count:{sku}，value: stockCountSurplus
             cacheActivitySkuStockCount(activitySkuEntity.getSku(), activitySkuEntity.getStockCountSurplus());
-            // 预热活动配置次数【查询时预热到缓存】
+            // 预热活动次数【查询时预热到缓存】
             activityRepository.queryRaffleActivityCountByActivityCountId(activitySkuEntity.getActivityCountId());
         }
 
