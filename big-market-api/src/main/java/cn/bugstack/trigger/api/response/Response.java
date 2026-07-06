@@ -1,4 +1,4 @@
-package cn.bugstack.types.model;
+package cn.bugstack.trigger.api.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

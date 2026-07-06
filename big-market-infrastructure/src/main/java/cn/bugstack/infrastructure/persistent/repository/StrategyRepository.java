@@ -198,8 +198,9 @@ public class StrategyRepository implements IStrategyRepository {
                     .ruleLimitValue(RuleLogicCheckTypeVO.valueOf(ruleTreeNodeLine.getRuleLimitValue()))
                     .build();
 
-            List<RuleTreeNodeLineVO> ruleTreeNodeLineVOList = ruleTreeNodeLineMap.computeIfAbsent(ruleTreeNodeLine.getRuleNodeFrom(), k -> new ArrayList<>());
-            ruleTreeNodeLineVOList.add(ruleTreeNodeLineVO);
+            ruleTreeNodeLineMap
+                    .computeIfAbsent(ruleTreeNodeLine.getRuleNodeFrom(), k -> new ArrayList<>())
+                    .add(ruleTreeNodeLineVO);
         }
 
         // 2. tree node 转换为Map结构

@@ -1,7 +1,7 @@
 package cn.bugstack.trigger.api;
 
 import cn.bugstack.trigger.api.dto.*;
-import cn.bugstack.types.model.Response;
+import cn.bugstack.trigger.api.response.Response;
 
 import java.util.List;
 

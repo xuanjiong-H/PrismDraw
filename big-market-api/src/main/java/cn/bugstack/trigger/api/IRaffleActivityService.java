@@ -1,8 +1,7 @@
 package cn.bugstack.trigger.api;
 
 import cn.bugstack.trigger.api.dto.*;
-import cn.bugstack.types.model.Response;
-import org.springframework.web.bind.annotation.RequestParam;
+import cn.bugstack.trigger.api.response.Response;
 
 import java.math.BigDecimal;
 import java.util.List;
