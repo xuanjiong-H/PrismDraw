@@ -143,6 +143,11 @@
                 <artifactId>spring-cloud-starter-zookeeper-discovery</artifactId>
                 <version>3.1.4</version>
             </dependency>
+            <dependency>
+                <groupId>com.netflix.hystrix</groupId>
+                <artifactId>hystrix-javanica</artifactId>
+                <version>1.5.18</version>
+            </dependency>
 
             <!-- 工程模块 -->
             <dependency>

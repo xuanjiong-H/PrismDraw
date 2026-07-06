@@ -14,6 +14,8 @@ public enum ResponseCode {
     ILLEGAL_PARAMETER("0002", "非法参数"),
     INDEX_DUP("0003", "唯一索引冲突"),
     DEGRADE_SWITCH("0004", "活动已降级"),
+    RATE_LIMITER("0005", "访问限流拦截"),
+    HYSTRIX("0006", "访问熔断拦截"),
     STRATEGY_RULE_WEIGHT_IS_NULL("ERR_BIZ_001", "业务异常，策略规则中 rule_weight 权重规则已适用但未配置"),
     UN_ASSEMBLED_STRATEGY_ARMORY("ERR_BIZ_002", "抽奖策略配置未装配，请通过IStrategyArmory完成装配"),
     ACTIVITY_STATE_ERROR("ERR_BIZ_003", "活动未开启（非open状态）"),
