@@ -2,7 +2,7 @@ package cn.bugstack.test.trigger;
 
 import cn.bugstack.trigger.api.IRaffleStrategyService;
 import cn.bugstack.trigger.api.dto.*;
-import cn.bugstack.types.model.Response;
+import cn.bugstack.trigger.api.response.Response;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
