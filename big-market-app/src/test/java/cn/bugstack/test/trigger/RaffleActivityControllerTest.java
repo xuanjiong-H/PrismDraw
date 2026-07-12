@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.framework.CuratorFramework;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -30,7 +31,7 @@ public class RaffleActivityControllerTest {
     @Resource
     private IRaffleActivityService raffleActivityService;
 
-    @Resource
+    @Autowired(required = false)
     private CuratorFramework curatorFramework;
 
     @Test
@@ -45,7 +46,7 @@ public class RaffleActivityControllerTest {
     }
 
     @Test
-    public void test_draw() {
+    public void test_draw() throws InterruptedException {
         for (int i = 0; i < 1; i++) {
             ActivityDrawRequestDTO request = new ActivityDrawRequestDTO();
             request.setActivityId(100301L);
@@ -55,6 +56,8 @@ public class RaffleActivityControllerTest {
             log.info("请求参数：{}", JSON.toJSONString(request));
             log.info("测试结果：{}", JSON.toJSONString(response));
         }
+
+        new CountDownLatch(1).await();
     }
 
     @Test
@@ -73,7 +76,7 @@ public class RaffleActivityControllerTest {
 
     @Test
     public void test_calendarSignRebate() throws InterruptedException {
-        Response<Boolean> response = raffleActivityService.calendarSignRebate("xiaofuge00");
+        Response<Boolean> response = raffleActivityService.calendarSignRebate("xiaofuge109");
         log.info("测试结果：{}", JSON.toJSONString(response));
 
         // 让程序挺住方便测试，也可以去掉

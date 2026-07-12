@@ -41,9 +41,8 @@ public class SendMessageTaskJob {
     public void exec_db01() {
         // 为什么加锁？分布式应用N台机器部署互备，任务调度会有N个同时执行，那么这里需要增加抢占机制，谁抢占到谁就执行。完毕后，下一轮继续抢占。
         RLock lock = redissonClient.getLock("big-market-SendMessageTaskJob_DB1");
-        boolean isLocked = false;
         try {
-            isLocked = lock.tryLock(3, 0, TimeUnit.SECONDS);
+            boolean isLocked = lock.tryLock(3, 0, TimeUnit.SECONDS);
             if (!isLocked) return;
 
             // 设置库表
@@ -66,7 +65,7 @@ public class SendMessageTaskJob {
             log.error("定时任务，扫描MQ任务表发送消息失败。", e);
         } finally {
             dbRouter.clear();
-            if (isLocked) {
+            if (lock.isLocked() && lock.isHeldByCurrentThread()) {
                 lock.unlock();
             }
         }
@@ -80,9 +79,8 @@ public class SendMessageTaskJob {
     public void exec_db02() {
         // 为什么加锁？分布式应用N台机器部署互备，任务调度会有N个同时执行，那么这里需要增加抢占机制，谁抢占到谁就执行。完毕后，下一轮继续抢占。
         RLock lock = redissonClient.getLock("big-market-SendMessageTaskJob_DB2");
-        boolean isLocked = false;
         try {
-            isLocked = lock.tryLock(3, 0, TimeUnit.SECONDS);
+            boolean isLocked = lock.tryLock(3, 0, TimeUnit.SECONDS);
             if (!isLocked) return;
 
             // 设置库表
@@ -105,7 +103,7 @@ public class SendMessageTaskJob {
             log.error("定时任务，扫描MQ任务表发送消息失败。", e);
         } finally {
             dbRouter.clear();
-            if (isLocked) {
+            if (lock.isLocked() && lock.isHeldByCurrentThread()) {
                 lock.unlock();
             }
         }
