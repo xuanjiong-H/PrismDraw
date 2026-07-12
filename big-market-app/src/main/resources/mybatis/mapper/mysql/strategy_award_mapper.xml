@@ -47,4 +47,9 @@
         where strategy_id = #{strategyId} and award_id = #{awardId}
     </select>
 
+    <select id="queryOpenActivityStrategyAwardList" resultMap="dataMap">
+        select strategy_id, award_id from strategy_award
+        where strategy_id in (select strategy_id from raffle_activity where state = 'open')
+    </select>
+
 </mapper>

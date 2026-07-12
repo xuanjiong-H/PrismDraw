@@ -6,6 +6,7 @@ import cn.bugstack.trigger.api.response.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.zookeeper.data.Stat;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -22,7 +23,7 @@ import java.nio.charset.StandardCharsets;
 @RequestMapping("/api/${app.config.api-version}/raffle/dcc/")
 public class DCCController implements IDCCService {
 
-    @Resource
+    @Autowired(required = false)
     private CuratorFramework client;
 
     private static final String BASE_CONFIG_PATH = "/big-market-dcc";
@@ -39,6 +40,13 @@ public class DCCController implements IDCCService {
     public Response<Boolean> updateConfig(@RequestParam String key, @RequestParam String value) {
         try {
             log.info("DCC 动态配置值变更开始 key:{} value:{}", key, value);
+            if (null == client){
+                log.warn("DCC 动态配置值变更拒绝，CuratorFramework 未初始化启动「配置未开启」 key:{} value:{}", key, value);
+                return Response.<Boolean>builder()
+                        .code(ResponseCode.UN_ERROR.getCode())
+                        .info(ResponseCode.UN_ERROR.getInfo())
+                        .build();
+            }
             String keyPath = BASE_CONFIG_PATH_CONFIG.concat("/").concat(key);
             if (null == client.checkExists().forPath(keyPath)) {
                 client.create().creatingParentsIfNeeded().forPath(keyPath);

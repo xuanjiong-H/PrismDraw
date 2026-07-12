@@ -31,7 +31,7 @@ public class RuleWeightLogicChain extends AbstractLogicChain {
     protected IStrategyDispatch strategyDispatch;
 
     // 按需选择需要的计算策略，旧版是 AnalyticalNotEqual 算法，新增加 = 算法。使用时可以实例化 AnalyticalEqual 即可。这个操作也可以从数据库中配置处理。
-    private final IAnalytical analytical = new AnalyticalNotEqual();
+    private final IAnalytical analytical = new AnalyticalEqual();
 
     /**
      * 权重责任链过滤；

@@ -38,4 +38,10 @@
         where activity_id = #{activityId}
     </select>
 
+    <select id="querySkuList" resultType="java.lang.Long">
+        select sku
+        from raffle_activity_sku
+        where activity_id in (select activity_id from raffle_activity where state = 'open')
+    </select>
+
 </mapper>
