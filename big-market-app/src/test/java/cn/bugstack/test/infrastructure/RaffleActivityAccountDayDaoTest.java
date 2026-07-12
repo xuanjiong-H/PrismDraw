@@ -1,7 +1,7 @@
 package cn.bugstack.test.infrastructure;
 
-import cn.bugstack.infrastructure.persistent.dao.IRaffleActivityAccountDayDao;
-import cn.bugstack.infrastructure.persistent.po.RaffleActivityAccountDay;
+import cn.bugstack.infrastructure.dao.IRaffleActivityAccountDayDao;
+import cn.bugstack.infrastructure.dao.po.RaffleActivityAccountDay;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;

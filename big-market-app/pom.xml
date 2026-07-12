@@ -87,7 +87,7 @@
             <artifactId>easy-random-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>cn.bugstack.middleware</groupId>
+            <groupId>plus.gaga.middleware</groupId>
             <artifactId>db-router-spring-boot-starter</artifactId>
         </dependency>
         <dependency>
@@ -111,11 +111,17 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zookeeper-discovery</artifactId>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.elasticsearch.plugin/x-pack-sql-jdbc -->
+        <dependency>
+            <groupId>org.elasticsearch.plugin</groupId>
+            <artifactId>x-pack-sql-jdbc</artifactId>
+        </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>cn.bugstack</groupId>-->
-<!--            <artifactId>business-behavior-monitor-sdk</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>plus.gaga</groupId>
+            <artifactId>business-behavior-monitor-sdk</artifactId>
+            <version>1.1</version>
+        </dependency>
 
         <!-- 工程模块；启动依赖 trigger->domain, infrastructure-->
         <dependency>

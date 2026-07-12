@@ -23,7 +23,7 @@
             <artifactId>redisson-spring-boot-starter</artifactId>
         </dependency>
         <dependency>
-            <groupId>cn.bugstack.middleware</groupId>
+            <groupId>plus.gaga.middleware</groupId>
             <artifactId>db-router-spring-boot-starter</artifactId>
         </dependency>
         <dependency>

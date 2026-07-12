@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bugstack.infrastructure.dao.IUserAwardRecordDao">
+
+    <resultMap id="dataMap" type="cn.bugstack.infrastructure.dao.po.UserAwardRecord">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="activity_id" property="activityId"/>
+        <result column="strategy_id" property="strategyId"/>
+        <result column="order_id" property="orderId"/>
+        <result column="award_id" property="awardId"/>
+        <result column="award_title" property="awardTitle"/>
+        <result column="award_time" property="awardTime"/>
+        <result column="award_state" property="awardState"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="cn.bugstack.infrastructure.dao.po.UserAwardRecord">
+        insert into user_award_record(
+            user_id, activity_id, strategy_id, order_id, award_id, award_title, award_time, award_state, create_time, update_time
+        ) values (
+            #{userId},#{activityId},#{strategyId},#{orderId},#{awardId},#{awardTitle},#{awardTime},#{awardState},now(),now()
+        )
+    </insert>
+
+    <update id="updateAwardRecordCompletedState" parameterType="cn.bugstack.infrastructure.dao.po.UserAwardRecord">
+        update user_award_record set award_state = 'completed'
+        where user_id = #{userId} and order_id = #{orderId} and award_state = 'create'
+    </update>
+
+</mapper>

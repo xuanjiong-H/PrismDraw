@@ -3,7 +3,7 @@ package cn.bugstack.test.infrastructure;
 import cn.bugstack.domain.strategy.model.valobj.RuleTreeVO;
 import cn.bugstack.domain.strategy.model.valobj.StrategyAwardStockKeyVO;
 import cn.bugstack.domain.strategy.repository.IStrategyRepository;
-import cn.bugstack.infrastructure.persistent.redis.IRedisService;
+import cn.bugstack.infrastructure.redis.IRedisService;
 import cn.bugstack.types.common.Constants;
 import com.alibaba.fastjson2.JSON;
 import lombok.extern.slf4j.Slf4j;

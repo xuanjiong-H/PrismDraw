@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bugstack.infrastructure.dao.IRuleTreeNodeDao">
+
+    <resultMap id="dataMap" type="cn.bugstack.infrastructure.dao.po.RuleTreeNode">
+        <id column="id" property="id"/>
+        <result column="tree_id" property="treeId"/>
+        <result column="rule_key" property="ruleKey"/>
+        <result column="rule_desc" property="ruleDesc"/>
+        <result column="rule_value" property="ruleValue"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <select id="queryRuleTreeNodeListByTreeId" parameterType="java.lang.String" resultMap="dataMap">
+        select tree_id, rule_key, rule_desc, rule_value
+        from rule_tree_node
+        where tree_id = #{treeId}
+    </select>
+
+    <select id="queryRuleLocks" resultMap="dataMap">
+        select tree_id, rule_value
+        from rule_tree_node
+        where rule_key = 'rule_lock' and tree_id in
+        <foreach item="treeId" index="index" collection="array" open="(" separator="," close=")">
+            #{treeId}
+        </foreach>
+    </select>
+
+</mapper>

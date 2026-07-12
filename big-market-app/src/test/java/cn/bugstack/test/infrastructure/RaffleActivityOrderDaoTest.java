@@ -1,7 +1,7 @@
 package cn.bugstack.test.infrastructure;
 
-import cn.bugstack.infrastructure.persistent.dao.IRaffleActivityOrderDao;
-import cn.bugstack.infrastructure.persistent.po.RaffleActivityOrder;
+import cn.bugstack.infrastructure.dao.IRaffleActivityOrderDao;
+import cn.bugstack.infrastructure.dao.po.RaffleActivityOrder;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.RandomStringUtils;

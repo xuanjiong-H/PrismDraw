@@ -16,6 +16,11 @@ import org.junit.Test;
 public class ApiTest {
 
     @Test
+    public void test_integer(){
+        System.out.println(Integer.parseInt("109"));
+    }
+
+    @Test
     public void test() {
         RaffleAwardListRequestDTO requestDTO = new RaffleAwardListRequestDTO();
         requestDTO.setUserId("xiaofuge");
@@ -37,7 +42,5 @@ public class ApiTest {
         }
         return max;
     }
-
-
 
 }

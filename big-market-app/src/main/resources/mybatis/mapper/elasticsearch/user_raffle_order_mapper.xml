@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bugstack.infrastructure.elasticsearch.IElasticSearchUserRaffleOrderDao">
+
+    <resultMap id="dataMap" type="cn.bugstack.infrastructure.elasticsearch.po.UserRaffleOrder">
+        <id column="id" property="id"/>
+        <result column="_user_id" property="userId"/>
+        <result column="_activity_id" property="activityId"/>
+        <result column="_activity_name" property="activityName"/>
+        <result column="_strategy_id" property="strategyId"/>
+        <result column="_order_id" property="orderId"/>
+        <result column="_order_time" property="orderTime"/>
+        <result column="_order_state" property="orderState"/>
+        <result column="_create_time" property="createTime"/>
+        <result column="_update_time" property="updateTime"/>
+    </resultMap>
+
+    <select id="queryUserRaffleOrderList" resultMap="dataMap">
+        select _user_id, _activity_id, _activity_name, _strategy_id, _order_id, _order_time, _order_state
+        from "big_market.user_raffle_order"
+        order by _update_time
+        limit 10
+    </select>
+
+</mapper>

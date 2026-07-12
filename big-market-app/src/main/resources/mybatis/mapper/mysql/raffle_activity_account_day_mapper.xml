@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bugstack.infrastructure.dao.IRaffleActivityAccountDayDao">
+
+    <resultMap id="dataMap" type="cn.bugstack.infrastructure.dao.po.RaffleActivityAccountDay">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="activity_id" property="activityId"/>
+        <result column="day" property="day"/>
+        <result column="day_count" property="dayCount"/>
+        <result column="day_count_surplus" property="dayCountSurplus"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <insert id="insertActivityAccountDay" parameterType="cn.bugstack.infrastructure.dao.po.RaffleActivityAccountDay">
+        insert into raffle_activity_account_day(
+        user_id, activity_id, day, day_count, day_count_surplus, create_time, update_time)
+        values
+        (#{userId}, #{activityId}, #{day}, #{dayCount}, #{dayCountSurplus}, now(), now())
+    </insert>
+
+    <update id="updateActivityAccountDaySubtractionQuota" parameterType="cn.bugstack.infrastructure.dao.po.RaffleActivityAccountDay">
+        update raffle_activity_account_day
+        set day_count_surplus = day_count_surplus - 1, update_time = now()
+        where user_id = #{userId} and activity_id = #{activityId} and day = #{day} and day_count_surplus > 0
+    </update>
+
+    <select id="queryActivityAccountDayByUserId" parameterType="cn.bugstack.infrastructure.dao.po.RaffleActivityAccountDay" resultMap="dataMap">
+        select user_id, activity_id, day, day_count, day_count_surplus
+        from raffle_activity_account_day
+        where user_id = #{userId} and activity_id = #{activityId} and day = #{day}
+    </select>
+
+    <select id="queryRaffleActivityAccountDayPartakeCount" parameterType="cn.bugstack.infrastructure.dao.po.RaffleActivityAccountDay" resultType="java.lang.Integer">
+        select day_count - day_count_surplus
+        from raffle_activity_account_day
+        where user_id = #{userId} and activity_id = #{activityId} and day = #{day}
+    </select>
+
+    <update id="addAccountQuota" parameterType="cn.bugstack.infrastructure.dao.po.RaffleActivityAccountDay">
+        update raffle_activity_account_day
+        set day_count_surplus = day_count_surplus + #{dayCountSurplus},
+            day_count = day_count + #{dayCount},
+            update_time = now()
+        where user_id = #{userId} and activity_id = #{activityId} and day = #{day}
+    </update>
+
+</mapper>

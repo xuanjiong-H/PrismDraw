@@ -75,7 +75,7 @@ public class ZookeeperTest {
     @Test
     public void setData() throws Exception {
         curatorFramework.setData().forPath("/big-market-dcc/config/downgradeSwitch", "111".getBytes(StandardCharsets.UTF_8));
-//        curatorFramework.setData().forPath("/big-market-dcc/config/userWhiteList", "222".getBytes(StandardCharsets.UTF_8));
+        curatorFramework.setData().forPath("/big-market-dcc/config/userWhiteList", "222".getBytes(StandardCharsets.UTF_8));
     }
 
     @Test
