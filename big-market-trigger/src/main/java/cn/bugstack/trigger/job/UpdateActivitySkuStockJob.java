@@ -3,6 +3,7 @@ package cn.bugstack.trigger.job;
 import cn.bugstack.domain.activity.model.valobj.ActivitySkuStockKeyVO;
 import cn.bugstack.domain.activity.service.IRaffleActivitySkuStockService;
 import com.xxl.job.core.handler.annotation.XxlJob;
+import io.micrometer.core.annotation.Timed;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
@@ -34,6 +35,7 @@ public class UpdateActivitySkuStockJob {
      * 本地化任务注解；@Scheduled(cron = "0/5 * * * * ?")
      * 分布式任务注解；@XxlJob("SendMessageTaskJob")
      */
+    @Timed(value = "UpdateActivitySkuStockJob", description = "更新活动sku库存任务")
     @XxlJob("UpdateActivitySkuStockJob")
     public void exec() {
         // 为什么加锁？分布式应用N台机器部署互备，任务调度会有N个同时执行，那么这里需要增加抢占机制，谁抢占到谁就执行。完毕后，下一轮继续抢占。
