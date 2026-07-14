@@ -21,7 +21,9 @@ public interface IStrategyRepository {
 
     List<StrategyAwardEntity> queryStrategyAwardList(Long strategyId);
 
-    void storeStrategyAwardSearchRateTable(String key, Integer rateRange, Map<Integer, Integer> strategyAwardSearchRateTable);
+    <K, V> void storeStrategyAwardSearchRateTable(String key, Integer rateRange, Map<K, V> strategyAwardSearchRateTable);
+
+    <K, V> Map<K, V> getMap(String key);
 
     Integer getStrategyAwardAssemble(String key, Integer rateKey);
 
@@ -155,5 +157,20 @@ public interface IStrategyRepository {
      */
     List<StrategyAwardStockKeyVO> queryOpenActivityStrategyAwardList();
 
+    /**
+     * 存储抽奖策略对应的Bean算法
+     *
+     * @param key      策略ID
+     * @param beanName 策略对象名称
+     */
+    void cacheStrategyArmoryAlgorithm(String key, String beanName);
+
+    /**
+     * 获取存储抽奖策略对应的Bean算法
+     *
+     * @param key 策略ID
+     * @return 策略对象名称
+     */
+    String queryStrategyArmoryAlgorithmFromCache(String key);
 
 }

@@ -10,6 +10,7 @@ import org.junit.runner.RunWith;
 import org.redisson.api.RMap;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.util.ReflectionTestUtils;
 
 import javax.annotation.Resource;
 import java.util.*;
@@ -22,7 +23,7 @@ import java.util.*;
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class StrategyTest {
+public class StrategyArmoryDispatchTest {
 
     @Resource
     private IStrategyArmory strategyArmory;
@@ -35,7 +36,9 @@ public class StrategyTest {
      */
     @Before
     public void test_strategyArmory() {
-        boolean success = strategyArmory.assembleLotteryStrategy(100005L);
+        // 动态Mock值操作，可用于调整选择哪个算法
+        ReflectionTestUtils.setField(strategyArmory, "ALGORITHM_THRESHOLD_VALUE", 100);
+        boolean success = strategyArmory.assembleLotteryStrategy(100006L);
         log.info("测试结果：{}", success);
     }
 
@@ -44,7 +47,7 @@ public class StrategyTest {
      */
     @Test
     public void test_getRandomAwardId() {
-         log.info("测试结果：{} - 奖品ID值", strategyDispatch.getRandomAwardId(100001L));
+        log.info("测试结果：{} - 奖品ID值", strategyDispatch.getRandomAwardId(100006L));
     }
 
     /**
@@ -78,7 +81,7 @@ public class StrategyTest {
     }
 
     @Test
-    public void test_shuffle(){
+    public void test_shuffle() {
         Map<Integer, Integer> strategyAwardSearchRateTable = new HashMap<>();
         // 添加内容到Map中
         strategyAwardSearchRateTable.put(1, 10);
