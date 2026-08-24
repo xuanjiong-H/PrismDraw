@@ -36,7 +36,19 @@ build/
 
 ### Mac OS ###
 .DS_Store
-/data/
 /.idea/
-/docs/dev-ops/log/
+
+### config ###
+config/.env.dev
+config/.env.prod
+config/.env.test
+config/.env.*
+!config/.env.*.example
+
+### Runtime logs and generated data ###
+/data/
 /big-market-app/data/
+*.log
+
+### docs ###
+/docs/
